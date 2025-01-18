@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 <head>
-    <link crs:"game code" href:"game.js">
-    <link crs:"stylesheet" href:"styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plants vs. Zombies Clone</title>
@@ -12,9 +9,9 @@
 <body>
     <div id="game-board"></div>
     <div id="messages"></div>
-    <button onclick="placePeashooter()">Place Peashooter</button>
-    <button onclick="placeSunflower()">Place Sunflower</button>
-    <button onclick="placeWallnut()">Place Wall-nut</button>
+    <button onclick="setPlantType('peashooter')">Place Peashooter</button>
+    <button onclick="setPlantType('sunflower')">Place Sunflower</button>
+    <button onclick="setPlantType('wallnut')">Place Wall-nut</button>
     <p>Sun: <span id="sun">0</span></p>
     <p>Score: <span id="score">0</span></p>
     <script src="game.js"></script>
