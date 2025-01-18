@@ -5,21 +5,23 @@ let sun = 0;
 let zombies = [];
 let plants = [];
 let projectiles = [];
-let suns = [];
+let currentPlantType = '';
 
 for (let i = 0; i < 30; i++) {
     const cell = document.createElement('div');
     cell.className = 'cell';
+    cell.addEventListener('click', () => placePlant(cell, i));
     gameBoard.appendChild(cell);
 }
 
-function placePeashooter() {
-    if (sun >= 50) {
+function setPlantType(type) {
+    currentPlantType = type;
+}
+
+function placePlant(cell, index) {
+    if (currentPlantType === 'peashooter' && sun >= 50) {
         sun -= 50;
         updateSun();
-        const cells = document.querySelectorAll('.cell');
-        const index = 4; // Example: place Peashooter in the first row, middle cell
-        const cell = cells[index];
         if (!cell.querySelector('.plant')) {
             const plant = document.createElement('div');
             plant.className = 'peashooter';
@@ -27,16 +29,9 @@ function placePeashooter() {
             plants.push({ element: plant, cellIndex: index });
             setInterval(() => shootProjectile(cell, plant), 2000);
         }
-    }
-}
-
-function placeSunflower() {
-    if (sun >= 25) {
+    } else if (currentPlantType === 'sunflower' && sun >= 25) {
         sun -= 25;
         updateSun();
-        const cells = document.querySelectorAll('.cell');
-        const index = 9; // Example: place Sunflower in the second row, middle cell
-        const cell = cells[index];
         if (!cell.querySelector('.plant')) {
             const plant = document.createElement('div');
             plant.className = 'sunflower';
@@ -44,16 +39,9 @@ function placeSunflower() {
             plants.push({ element: plant, cellIndex: index });
             setInterval(() => generateSun(cell), 5000);
         }
-    }
-}
-
-function placeWallnut() {
-    if (sun >= 50) {
+    } else if (currentPlantType === 'wallnut' && sun >= 50) {
         sun -= 50;
         updateSun();
-        const cells = document.querySelectorAll('.cell');
-        const index = 14; // Example: place Wall-nut in the third row, middle cell
-        const cell = cells[index];
         if (!cell.querySelector('.plant')) {
             const plant = document.createElement('div');
             plant.className = 'wallnut';
