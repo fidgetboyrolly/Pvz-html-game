@@ -9,17 +9,20 @@ body {
 }
 
 #game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
     width: 500px;
-    height: 300px;
+    height: 150px;
     border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
     background-color: lightgreen;
+    margin-bottom: 20px;
 }
 
 .cell {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     border: 1px solid lightgrey;
     display: flex;
@@ -33,6 +36,7 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
+    border-radius: 50%;
 }
 
 .peashooter {
@@ -40,6 +44,7 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
+    border-radius: 50%;
 }
 
 .sunflower {
@@ -47,6 +52,7 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
+    border-radius: 50%;
 }
 
 .wallnut {
@@ -54,6 +60,7 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
+    border-radius: 50%;
 }
 
 .projectile {
@@ -62,6 +69,7 @@ body {
     height: 10px;
     position: absolute;
     transition: left 0.5s;
+    border-radius: 50%;
 }
 
 .sun {
@@ -78,4 +86,26 @@ body {
 #messages {
     margin-top: 10px;
     color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #game-board {
+        width: 90%;
+        height: auto;
+    }
+
+    .cell {
+        height: 60px;
+    }
+
+    .zombie, .peashooter, .sunflower, .wallnut, .projectile {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sun {
+        width: 15px;
+        height: 15px;
+    }
 }
