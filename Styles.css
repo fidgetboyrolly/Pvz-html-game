@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#game-board {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgreen;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.zombie {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.peashooter {
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.sunflower {
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.wallnut {
+    background-color: brown;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.projectile {
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    transition: left 0.5s;
+}
+
+.sun {
+    background-color: yellow;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#messages {
+    margin-top: 10px;
+    color: red;
+}
